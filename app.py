@@ -50,7 +50,7 @@ def enter_selection():
             print('Number did not match:  Not a valid calculation type, selection should be from 1 to 4')
             enter_selection()
     except:
-        print('ValueError: Not able to calculate alphabets, selection should contain numbers only')
+        print('ValueError: wrong value entered instead of a number, selection should contain numbers only')
         enter_selection()
     finally:
         answer = input('continue? (yes / no). press enter to continue or type no or exit to quit: ')
