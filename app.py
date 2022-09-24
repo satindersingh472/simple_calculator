@@ -24,14 +24,36 @@ def enter_selection():
         user_selection = int(user_selection)
         if(user_selection >= 1 and user_selection <= 4 ):
             return user_selection
-        else:
-            print('Not a valid selection')
-    except ValueError:
-        print('Please select valid option')
-    return user_selection
+    except TypeError:
+        print('Not a valid option')
+        user_selection = 0
+        return user_selection
 
 calculation_type = enter_selection()
 
+def get_inputs():
+    inputs_array= []
+    print('Please add the first number: ')
+    num1 = input()
+    num1 = int(num1)
+    inputs_array.append(num1)
+    print('Please add the second number: ')
+    num2 = input()
+    num2 = int(num2)
+    inputs_array.append(num2)
+    return inputs_array
+
+inputs = []
+first_number = 0
+second_number = 0
+try:
+    if(calculation_type >= 1 and calculation_type <= 4):
+        inputs = get_inputs()
+except: 
+    print('Not the valid selection of calculation type')
+    inputs = 0
+    first_number = inputs[0]
+    second_number = inputs[1]
 
 if(calculation_type == 1):
     print('Your result: ',add_numbers(first_number,second_number))
