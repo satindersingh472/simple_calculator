@@ -53,7 +53,7 @@ def enter_selection():
         print('ValueError: wrong value entered instead of a number, selection should contain numbers only')
         enter_selection()
     finally:
-        answer = input('continue? (yes / no). press enter to continue or type no or exit to quit: ')
+        answer = input('continue? (yes / no). press enter to continue or type no or exit and then press enter to quit: ')
         if answer.lower() in ['yes','']:
             enter_selection()
         elif answer.lower() in ['no','exit']:
