@@ -52,7 +52,16 @@ def enter_selection():
     except:
         print('ValueError: Not able to calculate alphabets, selection should contain numbers only')
         enter_selection()
+    finally:
+        answer = input('continue? (yes / no). press enter to continue or type no or exit to quit: ')
+        if answer.lower() in ['yes','']:
+            enter_selection()
+        elif answer.lower() in ['no','exit']:
+            print('Thanks for using calculator') 
+        else: 
+            print('Not a correct response, Thanks for using calculator')
 
 dbms = enter_selection()
+
 
 
